@@ -1,5 +1,7 @@
 import React from "react";
 
+import Contact from "./Contact";
+
 class Contacts extends React.Component {
   render() {
     return (
@@ -14,6 +16,11 @@ class Contacts extends React.Component {
             <span className="contact__data">Empresa</span>
             <span className="contact__data">Departamento</span>
           </article>
+          {
+            this.props.data
+            ? this.props.data.map(contact => <Contact key={contact.id} data={contact} />)
+            : this.props.children
+          }
         </section>
       </div>
     );
