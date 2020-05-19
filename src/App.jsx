@@ -3,6 +3,7 @@ import React from 'react';
 import Topbar from "./components/Topbar";
 import Filters from "./components/Filters";
 import Contacts from "./components/Contacts";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 import './App.scss';
 
@@ -30,7 +31,9 @@ class App extends React.Component {
       <React.Fragment>
         <Topbar />
         <Filters />
-        <Contacts data={this.state.contacts} loading={this.state.loading} />
+        <ErrorBoundary>
+          <Contacts data={this.state.contacts} loading={this.state.loading} />
+        </ErrorBoundary>
       </React.Fragment>
     )
   }
