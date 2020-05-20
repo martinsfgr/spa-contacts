@@ -1,4 +1,5 @@
 import React from 'react';
+import dayjs from 'dayjs';
 
 class Contact extends React.Component {
   render() {
@@ -8,9 +9,9 @@ class Contact extends React.Component {
         <span className="contact__data">{this.props.data.name}</span>
         <span className="contact__data">{this.props.data.phone}</span>
         <span className="contact__data">{this.props.data.country}</span>
-        <span className="contact__data">{this.props.data.admissionDate}</span>
         <span className="contact__data">{this.props.data.company}</span>
         <span className="contact__data">{this.props.data.department}</span>
+        <span className="contact__data">{ dayjs(this.props.data.admissionDate).format('DD/MM/YYYY') }</span>
       </article>
     );
   }
